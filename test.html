@@ -1,0 +1,36 @@
+
+<script src="require.js"></script>
+
+<script>
+	
+// fake fetch for quick testing
+window.fetch = url => new Promise(res=>{
+	const file = url.endsWith('a.js') ? `
+		module.exports = x => x+1;
+	` : url.endsWith('b.js') ? `
+		module.exports = x => x-1;
+	` : url.endsWith('c.js') ? `
+		exports.add = (x,y) => x+y;
+		exports.mul = (x,y) => x*y;
+	` : url.endsWith('d.js') ? `
+		// require('./a').then( a2=> console.log('aaa', a2));
+		const [a,b] = require('./a', './b');
+		module.exports = x => a(b(x));
+	` : url.endsWith('e.js') ? `
+		const [{add, mul}, identity] = require('./c', './d');
+		console.log(add(identity(6), mul(2,7)));
+		module.exports = 'boop';
+	` : '';
+	res({ text(){ return file }});
+});
+
+require('./c').then( ({add, mul})=>{
+	console.log('..', add(2,3), mul(2,3))
+});
+require('./e').then( e=>{
+	console.log('..', e)
+});
+
+
+
+</script>
