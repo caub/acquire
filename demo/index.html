@@ -1,0 +1,20 @@
+<style>
+	button {
+		font-size: 2em;
+		cursor: pointer;
+	}   
+</style>
+
+<div id="app"></div>
+ 
+<script src="https://unpkg.com/react@15.3.2/dist/react.min.js"></script>
+<script src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.min.js"></script>
+<script src="https://unpkg.com/babel-standalone@6.14.0/babel.min.js"></script>
+<script src="../require.js"></script>
+
+<script>
+require.cache.react = {exports: React};
+require('./App.jsx').then( App => {
+	ReactDOM.render(React.createElement(App), app);
+});
+</script>
