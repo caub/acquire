@@ -1,5 +1,5 @@
 const React = require('react');
-const Button = require('./Button.jsx');
+const Button = require('./Button');
 
 module.exports = class App extends React.PureComponent {
 

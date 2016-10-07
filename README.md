@@ -31,4 +31,4 @@ it doesn't work currently if a require call is not at top level
 - https://caub.github.io/require/demo
 
 
-<sub>inspired by [1](https://gist.github.com/awalGarg/6fbf685ff0deeeeaa5fe)</sub>
+<sub>inspired by [1](https://gist.github.com/caub/cf82c451120373dc1568#file-main-js)</sub>
