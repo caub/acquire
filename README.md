@@ -1,5 +1,7 @@
 ## Async require
 
+The syntax is like a classic CommonJS require, but it's asynchronous in the browser, so it works by adding yield (or await). Because of this, in this simple first version, it won't work when a require call is nested in a function.
+
 file a.js:
 ```js
 const {PI, floor, random} = Math;
@@ -24,7 +26,6 @@ const {readFile} = require('js'), fetch=url=>new Promise((res,rej)=>readFile(url
 // window, location, ..
 ```
 
-it doesn't work currently if a require call is not at top level
 
 ### Tests
 - https://caub.github.io/require/test.html
