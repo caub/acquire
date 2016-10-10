@@ -1,0 +1,23 @@
+{
+  "name": "acquire",
+  "version": "1.0.0",
+  "description": "Async require",
+  "main": "require.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/caub/acquire.git"
+  },
+  "keywords": [
+    "require",
+    "async"
+  ],
+  "author": "caub",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/caub/acquire/issues"
+  },
+  "homepage": "https://github.com/caub/acquire#readme"
+}
