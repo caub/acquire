@@ -30,6 +30,7 @@ const {readFile} = require('js'), fetch=url=>new Promise((res,rej)=>readFile(url
 ### Tests
 - https://caub.github.io/acquire/test.html
 - https://caub.github.io/acquire/demo
+- https://caub.github.io/todo-list/
 
 
 <sub>inspired by [1](https://gist.github.com/caub/cf82c451120373dc1568#file-main-js)</sub>
