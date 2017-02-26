@@ -19,7 +19,7 @@ window.require = (()=>{
 	const transform = window.Babel ? code=>Babel.transform(code, { presets: ['react'] }).code : code=>code;
 
 	function fqn(url, dirname) {
-		const {href, host} = new URL( (url.startsWith('/')?ROOT:dirname ) + url ),
+		const {href} = new URL( (url.startsWith('/')?ROOT:dirname ) + url ),
 			last = href.lastIndexOf('/'), dir = href.slice(0, last+1), name = href.slice(last+1),
 			filename = name ? (RE_EXT.test(name)?name:name+'.js') : 'index.js';
 		return {dir, abs: dir+filename};

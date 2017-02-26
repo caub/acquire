@@ -4,9 +4,8 @@ The syntax is like a classic CommonJS require, but it's asynchronous in the brow
 
 file a.js:
 ```js
-const {PI, floor, random} = Math;
-exports.PI = PI;
-exports.rand = n => floor(10*random());
+exports.PI = Math.PI;
+exports.rand = n => Math.floor(10*Math.random());
 ```
 file b.js:
 ```js
@@ -22,7 +21,7 @@ console.log('random angle:', toRadian(rand(360)))
 could work on node with 
 ```js
 const {parse: URL} = require('url');
-const {readFile} = require('js'), fetch=url=>new Promise((res,rej)=>readFile(url, (err,data)=>err?rej(err):res({ text(){ return data }})));
+const {readFile} = require('fs'), fetch=url=>new Promise((res,rej)=>readFile(url, (err,data)=>err?rej(err):res({ text(){ return data }})));
 // window, location, ..
 ```
 
